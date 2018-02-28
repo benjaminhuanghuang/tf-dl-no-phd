@@ -23,7 +23,7 @@ L = 200
 M = 100
 N = 60
 O = 30
-# Weights initialised with small random values between -0.2 and +0.2
+# Weights initialised with small random, values between -0.2 and +0.2
 # When using RELUs, make sure biases are initialised with small *positive* values for example 0.1 = tf.ones([K])/10
 W1 = tf.Variable(tf.truncated_normal([784, L], stddev=0.1))  # 784 = 28 * 28
 B1 = tf.Variable(tf.zeros([L]))
@@ -42,7 +42,7 @@ B5 = tf.Variable(tf.zeros([10]))
 
 # The model
 XX = tf.reshape(X, [-1, 784])
-Y1 = tf.nn.sigmoid(tf.matmul(XX, W1) + B1)
+Y1 = tf.nn.sigmoid(tf.matmul(XX, W1) + B1)     # first layer
 Y2 = tf.nn.sigmoid(tf.matmul(Y1, W2) + B2)
 Y3 = tf.nn.sigmoid(tf.matmul(Y2, W3) + B3)
 Y4 = tf.nn.sigmoid(tf.matmul(Y3, W4) + B4)
